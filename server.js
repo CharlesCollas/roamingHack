@@ -13,11 +13,11 @@ server.use(restify.bodyParser());
 server.post('/takeoff', function (req, res, next) {
 	console.log(req.params);
 	
-	var from = "";
-	var to = "";
-	var text = "";
+	var from = req.params.from;
+	var to = req.params.to;
+	var text = req.params.text;
 	
-	var result = from + "\n" + to + "\n" + text + "\n";
+	var result = "from : " + from + "\n" + "to : " + to + "\n" + text + "\n";
 	
 	function puts(error, stdout, stderr) { sys.puts(stdout); }
 	
