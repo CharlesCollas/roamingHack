@@ -1,5 +1,6 @@
 // le gestion des routes
 var restify = require('restify');
+var exec = require('child_process').exec;
 
 var server = restify.createServer({
 	name: 'MyServer',
@@ -17,13 +18,13 @@ server.post('/takeoff', function (req, res, next) {
 		var to = "";
 		var text = "";
 
-		var res = from + "\n";
-		var res += to + "\n";
-		var res += text + "\n";
+		var result = from + "\n" + to + "\n" + text + "\n";
 
-		var exec = require('child_process').exec;
-		exec("./send.js 0613508170 " + res , puts);
+		function puts(error, stdout, stderr) { sys.puts(stdout); }
 
+		var command = "/usr/bin/gammu --sendsms TEXT 0613508170 -len " + result.length + " -text \"" + result + "\"";
+
+		console.log(command);
 
     res.send(200);
 
