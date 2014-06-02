@@ -21,9 +21,11 @@ https://github.com/CharlesCollas/roamingHack/archive/master.zip
 A few things need to be installed before being able to use this script.
 Because it's a Node.js script, you have to install node : you can download it here http://nodejs.org/download/
 
-Then you need the node module restify to create a server on which we can handle REST API requests :
+Then you need some node modules :
 ```
-npm install restify
+npm install restify // to create a server on which we can handle REST API requests
+npm install sys // to handle potential system errors
+npm install child_process // to use exec function and run gammu
 ```
 
 And to finish, you need to install gammu to be able to send SMS : http://wammu.eu/docs/manual/project/install.html
