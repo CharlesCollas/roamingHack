@@ -29,14 +29,14 @@ server.post('/takeoff', function (req, res, next) {
 	console.log(command);
 	exec(command, puts);
 
-    res.send(200);
-    return next();
+    	res.send(200);
+    	return next();
 });
 
 server.get('/', function (req, res, next) {
 	console.log('GET /');
-    res.send(200);
-    return next();
+    	res.send(200);
+    	return next();
 });
 
 server.listen(4242, function() {
