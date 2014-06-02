@@ -22,10 +22,16 @@ A few things need to be installed before being able to use this script.
 Because it's a Node.js script, you have to install node : you can download it here http://nodejs.org/download/
 
 Then you need the node module restify to create a server on which we can handle REST API requests :
-
 ```
 npm install restify
 ```
 
 And to finish, you need to install gammu to be able to send SMS : http://wammu.eu/docs/manual/project/install.html
 Don't forget to change the phone number on line 24 by the one of the SIM on the old cell phone which will send the SMS.
+
+Now you can launch your server when you are in the cloned or dowloaded repository :
+```
+node server.js
+```
+
+And make POST requests with params from, to and text.
