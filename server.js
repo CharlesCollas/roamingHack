@@ -22,8 +22,6 @@ server.post('/takeoff', function (req, res, next) {
 	
 	var result = "from : " + from + "\n" + "to : " + to + "\n" + text + "\n";
 	
-	function puts(error, stdout, stderr) { sys.puts(stdout); }
-	
 	var command = "/usr/bin/gammu --sendsms TEXT 0613508170 -len " + result.length + " -text \"" + result + "\"";
 	
 	console.log(command);
